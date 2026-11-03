@@ -1,0 +1,157 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-03T07:52:29Z"
+ },
+ "title": "Wazn",
+ "namespace": "Wazn",
+ "libraries": [],
+ "sections": {},
+ "groups": [
+  "Logos",
+  "Products"
+ ],
+ "assetGroups": {
+  "Logos": {
+   "name": "Logos",
+   "tile": "l",
+   "order": [
+    "wazn-logo-ar.svg",
+    "wazn-logo-en.svg",
+    "wazn-logo-stacked.svg",
+    "wazn-mark.svg",
+    "wazn-logo-ar-reverse.svg",
+    "wazn-logo-en-reverse.svg",
+    "wazn-logo-stacked-reverse.svg",
+    "wazn-mark-reverse.svg",
+    "wazn-mark-mono-ink.svg",
+    "wazn-mark-mono-ivory.svg",
+    "wazn-app-icon.svg",
+    "wazn-favicon.svg"
+   ],
+   "files": {
+    "wazn-mark.svg": {
+     "name": "wazn-mark.svg",
+     "blob": "c7d4726fc20d5ad73e3b7f8f66264088",
+     "size": 526,
+     "type": "image/svg+xml"
+    },
+    "wazn-mark-reverse.svg": {
+     "name": "wazn-mark-reverse.svg",
+     "blob": "6d4f477540dbb536deed17011b6d9ecc",
+     "size": 526,
+     "type": "image/svg+xml"
+    },
+    "wazn-mark-mono-ink.svg": {
+     "name": "wazn-mark-mono-ink.svg",
+     "blob": "0442c2d5a957340f70871f1b7c899c50",
+     "size": 526,
+     "type": "image/svg+xml"
+    },
+    "wazn-mark-mono-ivory.svg": {
+     "name": "wazn-mark-mono-ivory.svg",
+     "blob": "059ed39f35932da92dfeed3cd0a4787b",
+     "size": 526,
+     "type": "image/svg+xml"
+    },
+    "wazn-logo-en.svg": {
+     "name": "wazn-logo-en.svg",
+     "blob": "17c5ba79ae8e875408fac0195d8a7cb5",
+     "size": 2426,
+     "type": "image/svg+xml"
+    },
+    "wazn-logo-en-reverse.svg": {
+     "name": "wazn-logo-en-reverse.svg",
+     "blob": "efa39b2cd188bf48b29be7c6290407af",
+     "size": 2426,
+     "type": "image/svg+xml"
+    },
+    "wazn-logo-ar.svg": {
+     "name": "wazn-logo-ar.svg",
+     "blob": "5649c5eca0408222832f99f3fe9cb82a",
+     "size": 2786,
+     "type": "image/svg+xml"
+    },
+    "wazn-logo-ar-reverse.svg": {
+     "name": "wazn-logo-ar-reverse.svg",
+     "blob": "9854fbbef7e66138c12c9284627aa3dc",
+     "size": 2786,
+     "type": "image/svg+xml"
+    },
+    "wazn-logo-stacked.svg": {
+     "name": "wazn-logo-stacked.svg",
+     "blob": "83ca704ac7877d647f890d209f1235bf",
+     "size": 4034,
+     "type": "image/svg+xml"
+    },
+    "wazn-logo-stacked-reverse.svg": {
+     "name": "wazn-logo-stacked-reverse.svg",
+     "blob": "1a7e564f5453870a48f781676fb7ef12",
+     "size": 4034,
+     "type": "image/svg+xml"
+    },
+    "wazn-app-icon.svg": {
+     "name": "wazn-app-icon.svg",
+     "blob": "822da262de3da6d6bec46e694b75ca5c",
+     "size": 632,
+     "type": "image/svg+xml"
+    },
+    "wazn-favicon.svg": {
+     "name": "wazn-favicon.svg",
+     "blob": "a4686a0d7a010d55065e473cb544c90f",
+     "size": 571,
+     "type": "image/svg+xml"
+    }
+   }
+  },
+  "Products": {
+   "name": "Products",
+   "tile": "m",
+   "order": [
+    "wazn-screen.svg",
+    "wazn-purify.svg",
+    "wazn-engine.svg",
+    "wazn-agent.svg"
+   ],
+   "files": {
+    "wazn-screen.svg": {
+     "name": "wazn-screen.svg",
+     "blob": "4abdf00a22d1bbced428517e80d38538",
+     "size": 11766,
+     "type": "image/svg+xml"
+    },
+    "wazn-purify.svg": {
+     "name": "wazn-purify.svg",
+     "blob": "0944a5d7f12381bc0517bb29ee26bf33",
+     "size": 9804,
+     "type": "image/svg+xml"
+    },
+    "wazn-engine.svg": {
+     "name": "wazn-engine.svg",
+     "blob": "e914fc0a952c05967f0ef7b272063867",
+     "size": 10004,
+     "type": "image/svg+xml"
+    },
+    "wazn-agent.svg": {
+     "name": "wazn-agent.svg",
+     "blob": "f9fa8274825cee0c676e5c35b7e8e1f2",
+     "size": 9527,
+     "type": "image/svg+xml"
+    }
+   }
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "readme": "project/README.md",
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Shokr",
+  "at": "2026-11-03T07:52:29Z",
+  "via": "Claude chat",
+  "note": "Initial Wazn brand identity: logo suite, tokens, type, 5 components, cover."
+ }
+}

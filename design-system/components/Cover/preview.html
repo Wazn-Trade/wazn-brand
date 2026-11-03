@@ -1,0 +1,42 @@
+<!-- @dsCard height=288 -->
+<div class="wz-cover">
+  <style>
+    .wz-cover { position: relative; width: 960px; height: 288px; background: var(--surface-0); overflow: hidden; font-family: var(--font-sans); }
+    .wz-cover svg { position: absolute; inset: 0; }
+    .wz-cover .ink { fill: var(--brand-ink); }
+    .wz-cover .navy { fill: var(--brand-navy); }
+    .wz-cover .brass { fill: var(--brass); }
+    .wz-cover .ground { fill: var(--surface-0); }
+    .wz-cover .blk { rx: var(--radius-lg); }
+    .wz-cover .bar { rx: var(--radius-sm); }
+    .wz-cover .txt { position: absolute; left: var(--space-16); bottom: var(--space-12); max-width: 440px; }
+    .wz-cover h1 { margin: 0; font: 600 120px/0.92 var(--font-display); letter-spacing: -0.02em; color: var(--ink); }
+    .wz-cover p { margin: var(--space-3) 0 0; font: 400 14px/20px var(--font-sans); color: var(--ink-muted); }
+  </style>
+  <svg viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
+    <!--
+      blocks:  brand-ink tall slab 240×(288+16, bleeds top & bottom) · brass 160×112 (space-16×1.75 tall) · brand-navy 160×112
+      arrange: one tall slab with two stacked satellites bleeding off the right edge, gap space-4 (16)
+      pattern: literal motif (README §1, "different weights, balanced on one fulcrum"): six weights cut out of the slab
+               in the ground colour, standing on a brass beam over a brass fulcrum; moments about x=680 balance
+               (−12032 vs +12032: 48·88+96·60+64·32 = 32·32+128·68+24·96)
+      scales:  bar width space-4 (16), gap space-3 (12), heights 24–128 (space-6…space-16×2), beam space-2 (8);
+               radius-lg on blocks, radius-sm on weights
+    -->
+    <rect class="ink blk" x="560" y="-8" width="240" height="304"/>
+    <rect class="brass blk" x="816" y="-8" width="160" height="112"/>
+    <rect class="navy blk" x="816" y="120" width="160" height="176"/>
+    <rect class="ground bar" x="584" y="152" width="16" height="48"/>
+    <rect class="ground bar" x="612" y="104" width="16" height="96"/>
+    <rect class="ground bar" x="640" y="136" width="16" height="64"/>
+    <rect class="ground bar" x="704" y="168" width="16" height="32"/>
+    <rect class="ground bar" x="740" y="72" width="16" height="128"/>
+    <rect class="ground bar" x="768" y="176" width="16" height="24"/>
+    <rect class="brass" x="576" y="200" width="208" height="8"/>
+    <path class="brass" d="M680 208 L656 248 L704 248 Z"/>
+  </svg>
+  <div class="txt">
+    <h1>Wazn</h1>
+    <p>Halal capital, precisely weighted · استثمار حلال… بوزن دقيق</p>
+  </div>
+</div>

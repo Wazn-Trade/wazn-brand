@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wazn — Brand</title><link rel="icon" href="logos/svg/wazn-favicon.svg">
+<link rel="stylesheet" href="design-system/tokens.css"><link rel="stylesheet" href="design-system/components/bundle.css">
+<style>
+body{margin:0;background:var(--surface-0);color:var(--ink);font:16px/1.75 var(--font-sans)}
+main{max-width:1040px;margin:0 auto;padding:var(--space-12) var(--space-6)}
+h2{font:600 28px/36px var(--font-display);margin:var(--space-12) 0 var(--space-4);border-top:1px solid var(--line);padding-top:var(--space-8)}
+h3{font:600 15px/24px var(--font-sans);color:var(--ink-muted);margin:0 0 var(--space-2)}
+.bar{display:flex;justify-content:space-between;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--space-4)}
+figure{margin:0;background:#F6F3EC;border:1px solid var(--line);border-radius:var(--radius-md);padding:var(--space-6);display:grid;gap:var(--space-3);place-items:center}
+figure.dark{background:#0E1B2C} figure img{max-width:100%;max-height:120px}
+figcaption{font:12px/16px var(--font-mono);color:#8F8676}
+.sw{display:grid;grid-template-columns:56px 1fr;column-gap:var(--space-3);font-size:13px;line-height:20px;margin-bottom:var(--space-3)}
+.chip{grid-row:span 3;width:56px;height:56px;border-radius:var(--radius-md);border:1px solid var(--line)}
+.sw code,.ty code{font:12px var(--font-mono);color:var(--ink-muted)} .sw span{color:var(--ink-muted)}
+.ty{padding:var(--space-3) 0;border-bottom:1px solid var(--line)}
+.comp{background:var(--surface-1);border:1px solid var(--line);border-radius:var(--radius-md);padding:var(--space-4);margin-bottom:var(--space-4);overflow:auto}
+.cover{overflow:auto;border:1px solid var(--line);border-radius:var(--radius-md)}
+</style></head><body><main>
+<div class="bar"><img src="logos/svg/wazn-logo-en.svg" height="40" alt="Wazn">
+<button class="wz-btn wz-btn--secondary wz-btn--sm" onclick="const h=document.documentElement;h.dataset.theme=h.dataset.theme==='light'?'dark':'light'">Ivory / Night</button></div>
+<h2>Cover</h2><div class="cover"><div class="wz-cover">
+  <style>
+    .wz-cover { position: relative; width: 960px; height: 288px; background: var(--surface-0); overflow: hidden; font-family: var(--font-sans); }
+    .wz-cover svg { position: absolute; inset: 0; }
+    .wz-cover .ink { fill: var(--brand-ink); }
+    .wz-cover .navy { fill: var(--brand-navy); }
+    .wz-cover .brass { fill: var(--brass); }
+    .wz-cover .ground { fill: var(--surface-0); }
+    .wz-cover .blk { rx: var(--radius-lg); }
+    .wz-cover .bar { rx: var(--radius-sm); }
+    .wz-cover .txt { position: absolute; left: var(--space-16); bottom: var(--space-12); max-width: 440px; }
+    .wz-cover h1 { margin: 0; font: 600 120px/0.92 var(--font-display); letter-spacing: -0.02em; color: var(--ink); }
+    .wz-cover p { margin: var(--space-3) 0 0; font: 400 14px/20px var(--font-sans); color: var(--ink-muted); }
+  </style>
+  <svg viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
+    <!--
+      blocks:  brand-ink tall slab 240×(288+16, bleeds top & bottom) · brass 160×112 (space-16×1.75 tall) · brand-navy 160×112
+      arrange: one tall slab with two stacked satellites bleeding off the right edge, gap space-4 (16)
+      pattern: literal motif (README §1, "different weights, balanced on one fulcrum"): six weights cut out of the slab
+               in the ground colour, standing on a brass beam over a brass fulcrum; moments about x=680 balance
+               (−12032 vs +12032: 48·88+96·60+64·32 = 32·32+128·68+24·96)
+      scales:  bar width space-4 (16), gap space-3 (12), heights 24–128 (space-6…space-16×2), beam space-2 (8);
+               radius-lg on blocks, radius-sm on weights
+    -->
+    <rect class="ink blk" x="560" y="-8" width="240" height="304"/>
+    <rect class="brass blk" x="816" y="-8" width="160" height="112"/>
+    <rect class="navy blk" x="816" y="120" width="160" height="176"/>
+    <rect class="ground bar" x="584" y="152" width="16" height="48"/>
+    <rect class="ground bar" x="612" y="104" width="16" height="96"/>
+    <rect class="ground bar" x="640" y="136" width="16" height="64"/>
+    <rect class="ground bar" x="704" y="168" width="16" height="32"/>
+    <rect class="ground bar" x="740" y="72" width="16" height="128"/>
+    <rect class="ground bar" x="768" y="176" width="16" height="24"/>
+    <rect class="brass" x="576" y="200" width="208" height="8"/>
+    <path class="brass" d="M680 208 L656 248 L704 248 Z"/>
+  </svg>
+  <div class="txt">
+    <h1>Wazn</h1>
+    <p>Halal capital, precisely weighted · استثمار حلال… بوزن دقيق</p>
+  </div>
+</div>
+</div>
+<h2>Logos</h2><div class="grid"><figure class=""><img src="logos/svg/wazn-agent.svg" alt="wazn-agent"><figcaption>wazn-agent.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-app-icon.svg" alt="wazn-app-icon"><figcaption>wazn-app-icon.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-engine.svg" alt="wazn-engine"><figcaption>wazn-engine.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-favicon.svg" alt="wazn-favicon"><figcaption>wazn-favicon.svg</figcaption></figure><figure class="dark"><img src="logos/svg/wazn-logo-ar-reverse.svg" alt="wazn-logo-ar-reverse"><figcaption>wazn-logo-ar-reverse.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-logo-ar.svg" alt="wazn-logo-ar"><figcaption>wazn-logo-ar.svg</figcaption></figure><figure class="dark"><img src="logos/svg/wazn-logo-en-reverse.svg" alt="wazn-logo-en-reverse"><figcaption>wazn-logo-en-reverse.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-logo-en.svg" alt="wazn-logo-en"><figcaption>wazn-logo-en.svg</figcaption></figure><figure class="dark"><img src="logos/svg/wazn-logo-stacked-reverse.svg" alt="wazn-logo-stacked-reverse"><figcaption>wazn-logo-stacked-reverse.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-logo-stacked.svg" alt="wazn-logo-stacked"><figcaption>wazn-logo-stacked.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-mark-mono-ink.svg" alt="wazn-mark-mono-ink"><figcaption>wazn-mark-mono-ink.svg</figcaption></figure><figure class="dark"><img src="logos/svg/wazn-mark-mono-ivory.svg" alt="wazn-mark-mono-ivory"><figcaption>wazn-mark-mono-ivory.svg</figcaption></figure><figure class="dark"><img src="logos/svg/wazn-mark-reverse.svg" alt="wazn-mark-reverse"><figcaption>wazn-mark-reverse.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-mark.svg" alt="wazn-mark"><figcaption>wazn-mark.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-purify.svg" alt="wazn-purify"><figcaption>wazn-purify.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-screen.svg" alt="wazn-screen"><figcaption>wazn-screen.svg</figcaption></figure></div>
+<h2>Colour</h2><div class="grid"><div class="sw"><div class="chip" style="background:var(--surface-0)"></div><b>surface-0</b><code>#F6F3EC · #0B1522</code><span>Page background (Wazn Ivory / Night). Default ground for text and charts.</span></div><div class="sw"><div class="chip" style="background:var(--surface-1)"></div><b>surface-1</b><code>#FFFFFF · #122136</code><span>Cards, tables, panels, inputs: one step above surface-0.</span></div><div class="sw"><div class="chip" style="background:var(--surface-2)"></div><b>surface-2</b><code>#EDE8DD · #0F1C2E</code><span>Sunken areas: table header rows, zebra rows, code blocks, track of weight bars.</span></div><div class="sw"><div class="chip" style="background:var(--ink)"></div><b>ink</b><code>#0E1B2C · #EEE8DC</code><span>Primary text and the mark&#x27;s weights. 15.6:1 on surface-0 (light), 15:1 (dark).</span></div><div class="sw"><div class="chip" style="background:var(--ink-muted)"></div><b>ink-muted</b><code>#55606E · #9DA8B6</code><span>Secondary text: labels, captions, axis ticks. 5.8:1 on surface-0, 5.2:1 on surface-2.</span></div><div class="sw"><div class="chip" style="background:var(--brand-ink)"></div><b>brand-ink</b><code>#0E1B2C · #31507A</code><span>Brand blocks and primary buttons (Wazn Ink). In dark it lifts to navy so blocks never vanish into the ground.</span></div><div class="sw"><div class="chip" style="background:var(--brand-navy)"></div><b>brand-navy</b><code>#1B2F4A · #2A4467</code><span>Secondary brand block, hover state of brand-ink surfaces, chart series 2.</span></div><div class="sw"><div class="chip" style="background:var(--brass)"></div><b>brass</b><code>#A9844C · #C9A46A</code><span>Wazn Brass: the beam and fulcrum, accent fills, active weight bars, focus of attention. Fills and 24px+ type only (3.1:1 on surface-0); never body text.</span></div><div class="sw"><div class="chip" style="background:var(--brass-text)"></div><b>brass-text</b><code>#7A5A28 · #D7B57E</code><span>Brass when it must be read: links, small accent labels, focus rings. 5.7:1 on surface-0.</span></div><div class="sw"><div class="chip" style="background:var(--brass-tint)"></div><b>brass-tint</b><code>#EFE5D3 · #2B2619</code><span>Quiet brass ground: selected rows, highlighted figures, callouts.</span></div><div class="sw"><div class="chip" style="background:var(--on-brand)"></div><b>on-brand</b><code>#F6F3EC · #F6F3EC</code><span>Text and icons on brand-ink, brand-navy. 15.6:1 / 7.4:1.</span></div><div class="sw"><div class="chip" style="background:var(--on-brass)"></div><b>on-brass</b><code>#0E1B2C · #0B1522</code><span>Text on brass fills (accent buttons). 5.0:1 / 7.9:1.</span></div><div class="sw"><div class="chip" style="background:var(--line)"></div><b>line</b><code>#D9D2C4 · #26384F</code><span>Hairlines: dividers, table rules, card borders (decorative, not a control boundary).</span></div><div class="sw"><div class="chip" style="background:var(--line-strong)"></div><b>line-strong</b><code>#8F8676 · #6B7F99</code><span>Control borders (inputs, secondary buttons). 3.6:1 on surface-1, meets 3:1 non-text.</span></div><div class="sw"><div class="chip" style="background:var(--positive)"></div><b>positive</b><code>#0E5A3C · #6FD3A5</code><span>Gains, compliant (متوافق), filled orders. Always paired with ▲ or a word, never colour alone.</span></div><div class="sw"><div class="chip" style="background:var(--positive-tint)"></div><b>positive-tint</b><code>#E2EFE7 · #123227</code><span>Ground for positive badges and gain highlights. positive text 7.0:1 on it.</span></div><div class="sw"><div class="chip" style="background:var(--negative)"></div><b>negative</b><code>#B03C28 · #E8705A</code><span>Losses, excluded (مستبعد), rejected orders. Lighter than positive in light theme, darker in dark: tellable by lightness, plus ▼.</span></div><div class="sw"><div class="chip" style="background:var(--negative-tint)"></div><b>negative-tint</b><code>#F8E4DF · #3A1D19</code><span>Ground for negative badges. negative text 4.9:1 on it.</span></div><div class="sw"><div class="chip" style="background:var(--warning)"></div><b>warning</b><code>#8A5A00 · #E8B45A</code><span>Watchlist (تحت المراقبة), stale data, pending reconciliation.</span></div><div class="sw"><div class="chip" style="background:var(--warning-tint)"></div><b>warning-tint</b><code>#F5EAD3 · #33280F</code><span>Ground for warning badges. warning text 5.0:1 on it.</span></div><div class="sw"><div class="chip" style="background:var(--focus)"></div><b>focus</b><code>{brass-text} · {brass-text}</code><span>Focus ring (2px, 2px offset) on every interactive element.</span></div></div>
+<h2>Type</h2><div class="ty"><code>display-xl · 56px/64px · 600</code><div style="font-family:var(--font-display);font-size:56px;line-height:64px;font-weight:600">استثمار حلال… بوزن دقيق</div></div><div class="ty"><code>display-l · 40px/48px · 600</code><div style="font-family:var(--font-display);font-size:40px;line-height:48px;font-weight:600">Portfolio weights</div></div><div class="ty"><code>title · 28px/36px · 600</code><div style="font-family:var(--font-display);font-size:28px;line-height:36px;font-weight:600">المحفظة هذا الشهر</div></div><div class="ty"><code>heading · 20px/30px · 600</code><div style="font-family:var(--font-sans);font-size:20px;line-height:30px;font-weight:600">قواعد المخاطر</div></div><div class="ty"><code>body · 16px/28px · 400</code><div style="font-family:var(--font-sans);font-size:16px;line-height:28px;font-weight:400">الـ AI بيقترح، والقواعد بتقرر، وأنت بتوافق.</div></div><div class="ty"><code>body-sm · 14px/24px · 400</code><div style="font-family:var(--font-sans);font-size:14px;line-height:24px;font-weight:400">آخر تحديث: ٣ نوفمبر ٢٠٢٦</div></div><div class="ty"><code>label · 13px/20px · 500</code><div style="font-family:var(--font-sans);font-size:13px;line-height:20px;font-weight:500">الوزن المستهدف</div></div><div class="ty"><code>figure-l · 32px/40px · 500</code><div style="font-family:var(--font-mono);font-size:32px;line-height:40px;font-weight:500">+12.48%</div></div><div class="ty"><code>figure · 15px/24px · 500</code><div style="font-family:var(--font-mono);font-size:15px;line-height:24px;font-weight:500">1,284.50</div></div><div class="ty"><code>code · 13px/20px · 400</code><div style="font-family:var(--font-mono);font-size:13px;line-height:20px;font-weight:400">COMI · ord_5001</div></div>
+<h2>Components</h2><section class="comp"><h3>Button</h3><div class="wz" dir="rtl" lang="ar" style="background:var(--surface-0);padding:var(--space-6);display:grid;gap:var(--space-4)">
+  <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center">
+    <button class="wz-btn wz-btn--primary">اعتماد إعادة التوازن</button>
+    <button class="wz-btn wz-btn--accent">تشغيل الـ Backtest</button>
+    <button class="wz-btn wz-btn--secondary">مراجعة الأوامر</button>
+    <button class="wz-btn wz-btn--danger">إيقاف التداول</button>
+  </div>
+  <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center">
+    <button class="wz-btn wz-btn--primary wz-btn--sm">موافقة</button>
+    <button class="wz-btn wz-btn--secondary wz-btn--sm">رفض</button>
+    <button class="wz-btn wz-btn--primary" disabled>بانتظار البيانات</button>
+  </div>
+</div>
+</section><section class="comp"><h3>ComplianceBadge</h3><div class="wz" dir="rtl" lang="ar" style="background:var(--surface-0);padding:var(--space-6);display:grid;gap:var(--space-3)">
+  <div style="display:flex;gap:var(--space-3);flex-wrap:wrap">
+    <span class="wz-badge wz-badge--compliant">متوافق</span>
+    <span class="wz-badge wz-badge--watch">تحت المراقبة</span>
+    <span class="wz-badge wz-badge--excluded">مستبعد</span>
+  </div>
+  <div style="display:flex;gap:var(--space-3);flex-wrap:wrap" dir="ltr" lang="en">
+    <span class="wz-badge wz-badge--compliant">Compliant</span>
+    <span class="wz-badge wz-badge--watch">Watchlist</span>
+    <span class="wz-badge wz-badge--excluded">Excluded</span>
+  </div>
+</div>
+</section><section class="comp"><h3>HoldingsTable</h3><div class="wz" dir="rtl" lang="ar" style="background:var(--surface-0);padding:var(--space-6)">
+  <table class="wz-table">
+    <thead><tr><th>السهم</th><th>الحالة</th><th class="wz-num">الكمية</th><th class="wz-num">متوسط التكلفة</th><th class="wz-num">السعر</th><th class="wz-num">الربح/الخسارة</th></tr></thead>
+    <tbody>
+      <tr><td><span class="wz-num" style="font-size:13px">ACME</span></td><td><span class="wz-badge wz-badge--compliant">متوافق</span></td><td class="wz-num">1,200</td><td class="wz-num">96.40</td><td class="wz-num">104.25</td><td class="wz-num wz-up">▲ +8.14%</td></tr>
+      <tr><td><span class="wz-num" style="font-size:13px">DEMO</span></td><td><span class="wz-badge wz-badge--watch">تحت المراقبة</span></td><td class="wz-num">850</td><td class="wz-num">52.10</td><td class="wz-num">49.80</td><td class="wz-num wz-down">▼ −4.41%</td></tr>
+      <tr><td><span class="wz-num" style="font-size:13px">TEST</span></td><td><span class="wz-badge wz-badge--excluded">مستبعد</span></td><td class="wz-num">300</td><td class="wz-num">18.00</td><td class="wz-num">18.60</td><td class="wz-num wz-up">▲ +3.33%</td></tr>
+    </tbody>
+  </table>
+</div>
+</section><section class="comp"><h3>Stat</h3><div class="wz" dir="rtl" lang="ar" style="background:var(--surface-0);padding:var(--space-6);display:flex;gap:var(--space-4);flex-wrap:wrap">
+  <div class="wz-stat">
+    <span class="wz-stat__label">قيمة المحفظة (ج.م)</span>
+    <span class="wz-stat__value">1,284,560</span>
+    <span class="wz-stat__delta wz-stat__delta--up">▲ <span class="wz-num">+2.31%</span> منذ بداية الشهر</span>
+  </div>
+  <div class="wz-stat">
+    <span class="wz-stat__label">أقصى تراجع</span>
+    <span class="wz-stat__value">−7.4%</span>
+    <span class="wz-stat__delta wz-stat__delta--down">▼ حد التنبيه <span class="wz-num">−15%</span></span>
+  </div>
+  <div class="wz-stat">
+    <span class="wz-stat__label">مستحق التطهير</span>
+    <span class="wz-stat__value">412.75</span>
+    <span class="wz-stat__note">من توزيعات ٢٠٢٦</span>
+  </div>
+</div>
+</section><section class="comp"><h3>WeightBar</h3><div class="wz" dir="rtl" lang="ar" style="background:var(--surface-0);padding:var(--space-6)">
+  <div style="font:600 15px/24px var(--font-sans);margin-bottom:var(--space-3)">أوزان المحفظة · الهدف <span style="color:var(--brass-text)">|</span></div>
+  <div class="wz-weights" dir="ltr">
+    <div class="wz-weight"><span class="wz-weight__sym">ACME</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:84%"></span><span class="wz-weight__target" style="left:86%"></span></span><span class="wz-weight__val">12.6%</span></div>
+    <div class="wz-weight"><span class="wz-weight__sym">DEMO</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:62%"></span><span class="wz-weight__target" style="left:66%"></span></span><span class="wz-weight__val">9.3%</span></div>
+    <div class="wz-weight wz-weight--over"><span class="wz-weight__sym">XMPL</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:100%"></span><span class="wz-weight__target" style="left:80%"></span></span><span class="wz-weight__val">15.0%</span></div>
+    <div class="wz-weight"><span class="wz-weight__sym">SAMP</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:40%"></span><span class="wz-weight__target" style="left:40%"></span></span><span class="wz-weight__val">6.0%</span></div>
+    <div class="wz-weight"><span class="wz-weight__sym">CASH</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:33%;background:var(--line-strong)"></span></span><span class="wz-weight__val">5.0%</span></div>
+  </div>
+</div>
+</section>
+<p style="color:var(--ink-muted);font-size:13px">Rules and rationale: BRAND_BOOK.md · Tokens: design-system/tokens.json</p>
+</main></body></html>

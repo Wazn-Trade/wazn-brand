@@ -6,7 +6,7 @@ OUT = Path(__file__).resolve().parents[1] / "logos" / "svg"
 READEX = str(Path(__file__).resolve().parent / "src-fonts/ReadexPro.ttf")
 PLEX = str(Path(__file__).resolve().parent / "src-fonts/IBMPlexSansArabic-Medium.ttf")
 
-INK, NAVY, BRASS, IVORY, BRASS_DARK = "#0E1B2C", "#1B2F4A", "#A9844C", "#F6F3EC", "#C9A46A"
+INK, NAVY, BRASS, IVORY, BRASS_DARK = "#0A0A0A", "#2E2B26", "#B08A50", "#FBFAF7", "#C4A070"
 
 # ---- the mark: weights of different sizes, balanced on one fulcrum -------------------
 # Grid 56 x 40 (units). Beam y=22..26, bars stand on the beam, fulcrum below.
@@ -133,7 +133,7 @@ for en, ar in PRODUCTS:
     _, a3, _ = text_path(PLEX, f"وزن {ar}", sub)
     base2 = max(base + size * 0.22, b2[3]) + sub * 1.15
     d3, _, b3 = text_path(PLEX, f"وزن {ar}", sub, x=right - a3, baseline=base2)
-    body += f'<path d="{d3}" fill="#55606E"/>'
+    body += f'<path d="{d3}" fill="#6E6B64"/>'
     H = b3[3] + pad
     assets[f"Products/wazn-{en.lower()}.svg"] = svg(right + pad, H, body, f"Wazn {en}")
 

@@ -32,9 +32,9 @@ h2{{font:600 28px/36px var(--font-display);margin:var(--space-12) 0 var(--space-
 h3{{font:600 15px/24px var(--font-sans);color:var(--ink-muted);margin:0 0 var(--space-2)}}
 .bar{{display:flex;justify-content:space-between;align-items:center}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--space-4)}}
-figure{{margin:0;background:#F6F3EC;border:1px solid var(--line);border-radius:var(--radius-md);padding:var(--space-6);display:grid;gap:var(--space-3);place-items:center}}
-figure.dark{{background:#0E1B2C}} figure img{{max-width:100%;max-height:120px}}
-figcaption{{font:12px/16px var(--font-mono);color:#8F8676}}
+figure{{margin:0;background:var(--surface-1);border:1px solid var(--line);border-radius:var(--radius-md);padding:var(--space-6);display:grid;gap:var(--space-3);place-items:center}}
+figure.dark{{background:#0C0C0C}} figure img{{max-width:100%;max-height:120px}}
+figcaption{{font:12px/16px var(--font-mono);color:var(--ink-muted)}}
 .sw{{display:grid;grid-template-columns:56px 1fr;column-gap:var(--space-3);font-size:13px;line-height:20px;margin-bottom:var(--space-3)}}
 .chip{{grid-row:span 3;width:56px;height:56px;border-radius:var(--radius-md);border:1px solid var(--line)}}
 .sw code,.ty code{{font:12px var(--font-mono);color:var(--ink-muted)}} .sw span{{color:var(--ink-muted)}}
@@ -43,7 +43,7 @@ figcaption{{font:12px/16px var(--font-mono);color:#8F8676}}
 .cover{{overflow:auto;border:1px solid var(--line);border-radius:var(--radius-md)}}
 </style></head><body><main>
 <div class="bar"><img src="logos/svg/wazn-logo-en.svg" height="40" alt="Wazn">
-<button class="wz-btn wz-btn--secondary wz-btn--sm" onclick="const h=document.documentElement;h.dataset.theme=h.dataset.theme==='light'?'dark':'light'">Ivory / Night</button></div>
+<button class="wz-btn wz-btn--secondary wz-btn--sm" onclick="const h=document.documentElement;h.dataset.theme=h.dataset.theme==='light'?'dark':'light'">Paper / Graphite</button></div>
 <h2>Cover</h2><div class="cover">{cover}</div>
 <h2>Logos</h2><div class="grid">{lg}</div>
 <h2>Colour</h2><div class="grid">{sw}</div>

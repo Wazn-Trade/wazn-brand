@@ -68,7 +68,7 @@ Files are in **Assets → Logos** (outlined SVG, no font needed).
 
 Two themes: **Paper** (light, default) and **Graphite** (dark). Values and contrast are on every token in the Colors view.
 
-- **The core trio:** `--brand-ink` (Wazn Ink `#0A0A0A`), `--brass` (Wazn Brass `#B08A50`), `--surface-0` (Paper `#FBFAF7`). Roughly 70 / 5 / 25 on any brand surface: paper ground, ink type and blocks, brass as the single accent — used sparingly.
+- **The core trio:** `--brand-ink` (Wazn Ink `#111111`), `--brass` (Wazn Brass `#B88A3E`), `--surface-0` (Paper `#FFFFFF`). Roughly 70 / 5 / 25 on any brand surface: paper ground, ink type and blocks, brass as the single accent — used sparingly.
 - **Monochrome by default.** If a colour is not carrying meaning (compliance state, gain/loss, warning), it is not brass. The palette is deliberately narrow; restraint is the brand.
 - **Brass is an accent, never body text.** For readable brass use `--brass-text`.
 - **Status colours are earned:** `--positive`, `--negative` and `--warning` only ever mean gain/loss or compliance state, and are always paired with ▲/▼ or a word. Positive and negative also differ in lightness, so they hold up in greyscale and for colour-blind readers.

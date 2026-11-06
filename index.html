@@ -3,278 +3,131 @@
 <title>Wazn — Brand</title><link rel="icon" href="logos/svg/wazn-favicon.svg">
 <link rel="stylesheet" href="design-system/tokens.css"><link rel="stylesheet" href="design-system/components/bundle.css">
 <style>
-*,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--surface-0);color:var(--ink);font:15px/1.65 var(--font-sans);-webkit-font-smoothing:antialiased}
-main{max-width:1120px;margin:0 auto;padding:var(--space-16) var(--space-8)}
-.topbar{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:var(--space-8);border-bottom:1px solid var(--line)}
-.topbar__brand{display:flex;align-items:baseline;gap:var(--space-4)}
-.topbar img{height:28px;display:block}
-.topbar__meta{font:400 12px/18px var(--font-mono);color:var(--ink-muted);letter-spacing:0.02em}
-.toggle{appearance:none;background:transparent;border:1px solid var(--line-strong);color:var(--ink);height:30px;padding:0 var(--space-3);font:500 12px/1 var(--font-sans);letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;border-radius:var(--radius-md);transition:border-color 120ms,background 120ms}
-.toggle:hover{border-color:var(--ink);background:var(--surface-2)}
-
-section{margin-top:var(--space-24)}
-.sect-head{display:grid;grid-template-columns:160px 1fr;gap:var(--space-8);align-items:baseline;margin-bottom:var(--space-8)}
-.sect-no{font:500 11px/18px var(--font-mono);color:var(--ink-muted);letter-spacing:0.1em;text-transform:uppercase}
-.sect-title{margin:0;font:500 32px/40px var(--font-display);letter-spacing:-0.02em;color:var(--ink)}
-.sect-lead{grid-column:2;font:400 15px/26px var(--font-sans);color:var(--ink-muted);max-width:52ch;margin:0}
-
-/* COVER */
-.cover-wrap{overflow:auto;margin-top:var(--space-6)}
-.wz-cover{position:relative;width:1120px;height:360px;background:var(--surface-0);overflow:hidden;font-family:var(--font-display);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.wz-cover .mark-el{position:absolute;right:var(--space-16);top:50%;transform:translateY(-50%);width:280px;height:200px}
-.wz-cover .mark-el rect.b{fill:var(--ink)}
-.wz-cover .mark-el rect.beam,.wz-cover .mark-el path.fulc{fill:var(--brass)}
-.wz-cover .txt{position:absolute;left:var(--space-16);bottom:var(--space-16);max-width:560px}
-.wz-cover .eyebrow{font:500 11px/18px var(--font-mono);letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-muted);margin:0 0 var(--space-4)}
-.wz-cover h1{margin:0;font:400 96px/0.96 var(--font-display);letter-spacing:-0.045em;color:var(--ink)}
-.wz-cover p{margin:var(--space-4) 0 0;font:400 15px/24px var(--font-sans);color:var(--ink-muted);max-width:36ch}
-.wz-cover .rule{position:absolute;left:var(--space-16);top:var(--space-16);width:48px;height:1px;background:var(--brass)}
-
-/* LOGOS */
-.grid-logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-figure{margin:0;background:var(--surface-1);padding:var(--space-6);display:grid;gap:var(--space-4);place-items:center;min-height:180px}
-figure.dark{background:#0C0C0C}
-figure img{max-width:100%;max-height:100px;display:block}
-figcaption{font:400 11px/16px var(--font-mono);color:var(--ink-muted);letter-spacing:0.02em}
-
-/* COLOUR */
-.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-.sw{background:var(--surface-1);padding:var(--space-6);display:grid;grid-template-rows:auto auto 1fr;gap:var(--space-3)}
-.sw__chip{height:72px;border:1px solid var(--line)}
-.sw__head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-3)}
-.sw__name{font:500 13px/18px var(--font-sans);color:var(--ink);letter-spacing:0.02em}
-.sw__hex{font:400 11px/16px var(--font-mono);color:var(--ink-muted);text-align:end}
-.sw__use{font:400 12px/18px var(--font-sans);color:var(--ink-muted);margin:0}
-
-/* TYPE */
-.ty{display:grid;grid-template-columns:140px 1fr;gap:var(--space-6);padding:var(--space-6) 0;border-top:1px solid var(--line)}
-.ty:last-child{border-bottom:1px solid var(--line)}
-.ty__meta{font:400 11px/18px var(--font-mono);color:var(--ink-muted);letter-spacing:0.02em}
-.ty__sample{color:var(--ink)}
-
-/* COMPONENTS */
-.comp{border:1px solid var(--line);padding:var(--space-8);margin-bottom:var(--space-6);background:var(--surface-1)}
-.comp h3{margin:0 0 var(--space-6);font:400 11px/18px var(--font-mono);color:var(--ink-muted);letter-spacing:0.12em;text-transform:uppercase}
-.stage{background:var(--surface-0);padding:var(--space-8);border:1px solid var(--line)}
-
-footer{margin-top:var(--space-24);padding-top:var(--space-6);border-top:1px solid var(--line);display:flex;justify-content:space-between;font:400 12px/18px var(--font-mono);color:var(--ink-muted)}
-footer a{color:var(--brass-text);text-decoration:none;border-bottom:1px solid var(--line-strong)}
-
-@media (max-width: 760px){
-  main{padding:var(--space-8) var(--space-4)}
-  .sect-head{grid-template-columns:1fr}
-  .sect-lead{grid-column:1}
-  .wz-cover{width:100%;height:auto;aspect-ratio:16/9}
-  .wz-cover h1{font-size:56px}
-  .wz-cover .mark-el{width:180px;height:130px;right:var(--space-6)}
-}
+body{margin:0;background:var(--surface-0);color:var(--ink);font:16px/1.75 var(--font-sans)}
+main{max-width:1040px;margin:0 auto;padding:var(--space-12) var(--space-6)}
+h2{font:600 28px/36px var(--font-display);margin:var(--space-12) 0 var(--space-4);border-top:1px solid var(--line);padding-top:var(--space-8)}
+h3{font:600 15px/24px var(--font-sans);color:var(--ink-muted);margin:0 0 var(--space-2)}
+.bar{display:flex;justify-content:space-between;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--space-4)}
+figure{margin:0;background:var(--surface-1);border:1px solid var(--line);border-radius:var(--radius-md);padding:var(--space-6);display:grid;gap:var(--space-3);place-items:center}
+figure.dark{background:#0C0C0C} figure img{max-width:100%;max-height:120px}
+figcaption{font:12px/16px var(--font-mono);color:var(--ink-muted)}
+.sw{display:grid;grid-template-columns:56px 1fr;column-gap:var(--space-3);font-size:13px;line-height:20px;margin-bottom:var(--space-3)}
+.chip{grid-row:span 3;width:56px;height:56px;border-radius:var(--radius-md);border:1px solid var(--line)}
+.sw code,.ty code{font:12px var(--font-mono);color:var(--ink-muted)} .sw span{color:var(--ink-muted)}
+.ty{padding:var(--space-3) 0;border-bottom:1px solid var(--line)}
+.comp{background:var(--surface-1);border:1px solid var(--line);border-radius:var(--radius-md);padding:var(--space-4);margin-bottom:var(--space-4);overflow:auto}
+.cover{overflow:auto;border:1px solid var(--line);border-radius:var(--radius-md)}
 </style></head><body><main>
-
-<header class="topbar">
-  <div class="topbar__brand">
-    <img src="logos/svg/wazn-logo-en.svg" alt="Wazn">
-    <span class="topbar__meta">brand · v2 · minimal</span>
+<div class="bar"><img src="logos/svg/wazn-logo-en.svg" height="40" alt="Wazn">
+<button class="wz-btn wz-btn--secondary wz-btn--sm" onclick="const h=document.documentElement;h.dataset.theme=h.dataset.theme==='light'?'dark':'light'">Paper / Graphite</button></div>
+<h2>Cover</h2><div class="cover"><div class="wz-cover">
+  <style>
+    .wz-cover { position: relative; width: 960px; height: 288px; background: var(--surface-0); overflow: hidden; font-family: var(--font-sans); }
+    .wz-cover svg { position: absolute; inset: 0; }
+    .wz-cover .ink { fill: var(--brand-ink); }
+    .wz-cover .navy { fill: var(--brand-navy); }
+    .wz-cover .brass { fill: var(--brass); }
+    .wz-cover .ground { fill: var(--surface-0); }
+    .wz-cover .blk { rx: var(--radius-lg); }
+    .wz-cover .bar { rx: var(--radius-sm); }
+    .wz-cover .txt { position: absolute; left: var(--space-16); bottom: var(--space-12); max-width: 440px; }
+    .wz-cover h1 { margin: 0; font: 600 120px/0.92 var(--font-display); letter-spacing: -0.02em; color: var(--ink); }
+    .wz-cover p { margin: var(--space-3) 0 0; font: 400 14px/20px var(--font-sans); color: var(--ink-muted); }
+  </style>
+  <svg viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
+    <!--
+      blocks:  brand-ink tall slab 240×(288+16, bleeds top & bottom) · brass 160×112 (space-16×1.75 tall) · brand-navy 160×112
+      arrange: one tall slab with two stacked satellites bleeding off the right edge, gap space-4 (16)
+      pattern: literal motif (README §1, "different weights, balanced on one fulcrum"): six weights cut out of the slab
+               in the ground colour, standing on a brass beam over a brass fulcrum; moments about x=680 balance
+               (−12032 vs +12032: 48·88+96·60+64·32 = 32·32+128·68+24·96)
+      scales:  bar width space-4 (16), gap space-3 (12), heights 24–128 (space-6…space-16×2), beam space-2 (8);
+               radius-lg on blocks, radius-sm on weights
+    -->
+    <rect class="ink blk" x="560" y="-8" width="240" height="304"/>
+    <rect class="brass blk" x="816" y="-8" width="160" height="112"/>
+    <rect class="navy blk" x="816" y="120" width="160" height="176"/>
+    <rect class="ground bar" x="584" y="152" width="16" height="48"/>
+    <rect class="ground bar" x="612" y="104" width="16" height="96"/>
+    <rect class="ground bar" x="640" y="136" width="16" height="64"/>
+    <rect class="ground bar" x="704" y="168" width="16" height="32"/>
+    <rect class="ground bar" x="740" y="72" width="16" height="128"/>
+    <rect class="ground bar" x="768" y="176" width="16" height="24"/>
+    <rect class="brass" x="576" y="200" width="208" height="8"/>
+    <path class="brass" d="M680 208 L656 248 L704 248 Z"/>
+  </svg>
+  <div class="txt">
+    <h1>Wazn</h1>
+    <p>Halal capital, precisely weighted · استثمار حلال… بوزن دقيق</p>
   </div>
-  <button class="toggle" onclick="const h=document.documentElement;h.dataset.theme=h.dataset.theme==='light'?'dark':'light';this.textContent=h.dataset.theme==='light'?'Paper / Graphite':'Graphite / Paper'">Paper / Graphite</button>
-</header>
-
-<section>
-  <div class="sect-head">
-    <span class="sect-no">00 — Cover</span>
-    <h2 class="sect-title">Wazn</h2>
-    <p class="sect-lead">A single mark. Three weights, one beam, one fulcrum. The system reduced to its lightest possible expression.</p>
+</div>
+</div>
+<h2>Logos</h2><div class="grid"><figure class=""><img src="logos/svg/wazn-agent.svg" alt="wazn-agent"><figcaption>wazn-agent.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-app-icon.svg" alt="wazn-app-icon"><figcaption>wazn-app-icon.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-engine.svg" alt="wazn-engine"><figcaption>wazn-engine.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-favicon.svg" alt="wazn-favicon"><figcaption>wazn-favicon.svg</figcaption></figure><figure class="dark"><img src="logos/svg/wazn-logo-ar-reverse.svg" alt="wazn-logo-ar-reverse"><figcaption>wazn-logo-ar-reverse.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-logo-ar.svg" alt="wazn-logo-ar"><figcaption>wazn-logo-ar.svg</figcaption></figure><figure class="dark"><img src="logos/svg/wazn-logo-en-reverse.svg" alt="wazn-logo-en-reverse"><figcaption>wazn-logo-en-reverse.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-logo-en.svg" alt="wazn-logo-en"><figcaption>wazn-logo-en.svg</figcaption></figure><figure class="dark"><img src="logos/svg/wazn-logo-stacked-reverse.svg" alt="wazn-logo-stacked-reverse"><figcaption>wazn-logo-stacked-reverse.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-logo-stacked.svg" alt="wazn-logo-stacked"><figcaption>wazn-logo-stacked.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-mark-mono-ink.svg" alt="wazn-mark-mono-ink"><figcaption>wazn-mark-mono-ink.svg</figcaption></figure><figure class="dark"><img src="logos/svg/wazn-mark-mono-ivory.svg" alt="wazn-mark-mono-ivory"><figcaption>wazn-mark-mono-ivory.svg</figcaption></figure><figure class="dark"><img src="logos/svg/wazn-mark-reverse.svg" alt="wazn-mark-reverse"><figcaption>wazn-mark-reverse.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-mark.svg" alt="wazn-mark"><figcaption>wazn-mark.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-purify.svg" alt="wazn-purify"><figcaption>wazn-purify.svg</figcaption></figure><figure class=""><img src="logos/svg/wazn-screen.svg" alt="wazn-screen"><figcaption>wazn-screen.svg</figcaption></figure></div>
+<h2>Colour</h2><div class="grid"><div class="sw"><div class="chip" style="background:var(--surface-0)"></div><b>surface-0</b><code>#FFFFFF · #0C0C0C</code><span>Page background (Paper / Graphite). Default ground for text and charts.</span></div><div class="sw"><div class="chip" style="background:var(--surface-1)"></div><b>surface-1</b><code>#FFFFFF · #161616</code><span>Cards, tables, panels, inputs: one step above surface-0.</span></div><div class="sw"><div class="chip" style="background:var(--surface-2)"></div><b>surface-2</b><code>#F6F6F6 · #1E1E1E</code><span>Sunken areas: table header rows, zebra rows, code blocks, track of weight bars.</span></div><div class="sw"><div class="chip" style="background:var(--ink)"></div><b>ink</b><code>#111111 · #F2F2F2</code><span>Primary text and the mark&#x27;s weights. 18:1 on surface-0.</span></div><div class="sw"><div class="chip" style="background:var(--ink-muted)"></div><b>ink-muted</b><code>#555555 · #A6A6A6</code><span>Secondary text: labels, captions, axis ticks. 7.4:1 on surface-0.</span></div><div class="sw"><div class="chip" style="background:var(--brand-ink)"></div><b>brand-ink</b><code>#111111 · #1A1A1A</code><span>Brand blocks and primary buttons. In light it is the near-black ink itself; in dark it lifts to a warm charcoal so blocks never vanish into the ground.</span></div><div class="sw"><div class="chip" style="background:var(--brand-navy)"></div><b>brand-navy</b><code>#2A2A2A · #2A2A2A</code><span>Secondary brand block and hover state of primary surfaces. Chart series 2.</span></div><div class="sw"><div class="chip" style="background:var(--brass)"></div><b>brass</b><code>#B88A3E · #C9A368</code><span>Wazn Brass: the beam and fulcrum, outlined accent buttons, active weight bars, focus of attention. Fills and 24px+ type only; never body text.</span></div><div class="sw"><div class="chip" style="background:var(--brass-text)"></div><b>brass-text</b><code>#6E4F1E · #D9B98A</code><span>Brass when it must be read: links, small accent labels, focus rings. 7.5:1 on surface-0.</span></div><div class="sw"><div class="chip" style="background:var(--brass-tint)"></div><b>brass-tint</b><code>#F5ECD8 · #2A2318</code><span>Quiet brass ground: selected rows, highlighted figures, callouts, accent-button hover.</span></div><div class="sw"><div class="chip" style="background:var(--on-brand)"></div><b>on-brand</b><code>#FFFFFF · #F2F2F2</code><span>Text and icons on brand-ink, brand-navy.</span></div><div class="sw"><div class="chip" style="background:var(--on-brass)"></div><b>on-brass</b><code>#111111 · #0C0C0C</code><span>Text on brass fills.</span></div><div class="sw"><div class="chip" style="background:var(--line)"></div><b>line</b><code>#E8E8E8 · #262626</code><span>Hairlines: dividers, table rules, card borders. Decorative, not a control boundary.</span></div><div class="sw"><div class="chip" style="background:var(--line-strong)"></div><b>line-strong</b><code>#B5B5B5 · #4A4A4A</code><span>Control borders (inputs, secondary buttons). Meets 3:1 non-text.</span></div><div class="sw"><div class="chip" style="background:var(--positive)"></div><b>positive</b><code>#216E3F · #78C8A0</code><span>Gains, compliant (متوافق), filled orders. Always paired with ▲ or a word, never colour alone.</span></div><div class="sw"><div class="chip" style="background:var(--positive-tint)"></div><b>positive-tint</b><code>#E6EFE9 · #152A20</code><span>Ground for positive badges and gain highlights.</span></div><div class="sw"><div class="chip" style="background:var(--negative)"></div><b>negative</b><code>#94382A · #D97B65</code><span>Losses, excluded (مستبعد), rejected orders. Tellable by lightness, plus ▼.</span></div><div class="sw"><div class="chip" style="background:var(--negative-tint)"></div><b>negative-tint</b><code>#F7E7E2 · #2E1A15</code><span>Ground for negative badges.</span></div><div class="sw"><div class="chip" style="background:var(--warning)"></div><b>warning</b><code>#8A6B2E · #D4A860</code><span>Watchlist (تحت المراقبة), stale data, pending reconciliation.</span></div><div class="sw"><div class="chip" style="background:var(--warning-tint)"></div><b>warning-tint</b><code>#F4ECD9 · #2A2010</code><span>Ground for warning badges.</span></div><div class="sw"><div class="chip" style="background:var(--focus)"></div><b>focus</b><code>{brass-text} · {brass-text}</code><span>Focus ring (1.5px, 2px offset) on every interactive element.</span></div></div>
+<h2>Type</h2><div class="ty"><code>display-xl · 72px/76px · 500</code><div style="font-family:var(--font-display);font-size:72px;line-height:76px;font-weight:500">استثمار حلال… بوزن دقيق</div></div><div class="ty"><code>display-l · 44px/52px · 500</code><div style="font-family:var(--font-display);font-size:44px;line-height:52px;font-weight:500">Portfolio weights</div></div><div class="ty"><code>title · 26px/34px · 500</code><div style="font-family:var(--font-display);font-size:26px;line-height:34px;font-weight:500">المحفظة هذا الشهر</div></div><div class="ty"><code>heading · 18px/28px · 500</code><div style="font-family:var(--font-sans);font-size:18px;line-height:28px;font-weight:500">قواعد المخاطر</div></div><div class="ty"><code>body · 15px/26px · 400</code><div style="font-family:var(--font-sans);font-size:15px;line-height:26px;font-weight:400">الـ AI بيقترح، والقواعد بتقرر، وأنت بتوافق.</div></div><div class="ty"><code>body-sm · 13px/22px · 400</code><div style="font-family:var(--font-sans);font-size:13px;line-height:22px;font-weight:400">آخر تحديث: ٣ نوفمبر ٢٠٢٦</div></div><div class="ty"><code>label · 11px/18px · 500</code><div style="font-family:var(--font-sans);font-size:11px;line-height:18px;font-weight:500">الوزن المستهدف</div></div><div class="ty"><code>figure-l · 36px/44px · 400</code><div style="font-family:var(--font-mono);font-size:36px;line-height:44px;font-weight:400">+12.48%</div></div><div class="ty"><code>figure · 14px/22px · 500</code><div style="font-family:var(--font-mono);font-size:14px;line-height:22px;font-weight:500">1,284.50</div></div><div class="ty"><code>code · 12px/20px · 400</code><div style="font-family:var(--font-mono);font-size:12px;line-height:20px;font-weight:400">COMI · ord_5001</div></div>
+<h2>Components</h2><section class="comp"><h3>Button</h3><div class="wz" dir="rtl" lang="ar" style="background:var(--surface-0);padding:var(--space-6);display:grid;gap:var(--space-4)">
+  <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center">
+    <button class="wz-btn wz-btn--primary">اعتماد إعادة التوازن</button>
+    <button class="wz-btn wz-btn--accent">تشغيل الـ Backtest</button>
+    <button class="wz-btn wz-btn--secondary">مراجعة الأوامر</button>
+    <button class="wz-btn wz-btn--danger">إيقاف التداول</button>
   </div>
-  <div class="cover-wrap"><div class="wz-cover">
-    <span class="rule"></span>
-    <svg class="mark-el" viewBox="0 0 56 40" aria-hidden="true">
-      <rect class="b" x="3"  y="10" width="9" height="12"/>
-      <rect class="b" x="15" y="0"  width="9" height="22"/>
-      <rect class="b" x="44" y="1"  width="9" height="21"/>
-      <rect class="beam" x="0" y="22" width="56" height="4"/>
-      <path class="fulc" d="M28 26 L19 40 L37 40 Z"/>
-    </svg>
-    <div class="txt">
-      <p class="eyebrow">وزن · Halal capital, precisely weighted</p>
-      <h1>Wazn</h1>
-      <p>Rules decide. The AI advises. The owner approves. Nothing moves money on a hunch.</p>
-    </div>
-  </div></div>
+  <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center">
+    <button class="wz-btn wz-btn--primary wz-btn--sm">موافقة</button>
+    <button class="wz-btn wz-btn--secondary wz-btn--sm">رفض</button>
+    <button class="wz-btn wz-btn--primary" disabled>بانتظار البيانات</button>
+  </div>
+</div>
+</section><section class="comp"><h3>ComplianceBadge</h3><div class="wz" dir="rtl" lang="ar" style="background:var(--surface-0);padding:var(--space-6);display:grid;gap:var(--space-3)">
+  <div style="display:flex;gap:var(--space-3);flex-wrap:wrap">
+    <span class="wz-badge wz-badge--compliant">متوافق</span>
+    <span class="wz-badge wz-badge--watch">تحت المراقبة</span>
+    <span class="wz-badge wz-badge--excluded">مستبعد</span>
+  </div>
+  <div style="display:flex;gap:var(--space-3);flex-wrap:wrap" dir="ltr" lang="en">
+    <span class="wz-badge wz-badge--compliant">Compliant</span>
+    <span class="wz-badge wz-badge--watch">Watchlist</span>
+    <span class="wz-badge wz-badge--excluded">Excluded</span>
+  </div>
+</div>
+</section><section class="comp"><h3>HoldingsTable</h3><div class="wz" dir="rtl" lang="ar" style="background:var(--surface-0);padding:var(--space-6)">
+  <table class="wz-table">
+    <thead><tr><th>السهم</th><th>الحالة</th><th class="wz-num">الكمية</th><th class="wz-num">متوسط التكلفة</th><th class="wz-num">السعر</th><th class="wz-num">الربح/الخسارة</th></tr></thead>
+    <tbody>
+      <tr><td><span class="wz-num" style="font-size:13px">ACME</span></td><td><span class="wz-badge wz-badge--compliant">متوافق</span></td><td class="wz-num">1,200</td><td class="wz-num">96.40</td><td class="wz-num">104.25</td><td class="wz-num wz-up">▲ +8.14%</td></tr>
+      <tr><td><span class="wz-num" style="font-size:13px">DEMO</span></td><td><span class="wz-badge wz-badge--watch">تحت المراقبة</span></td><td class="wz-num">850</td><td class="wz-num">52.10</td><td class="wz-num">49.80</td><td class="wz-num wz-down">▼ −4.41%</td></tr>
+      <tr><td><span class="wz-num" style="font-size:13px">TEST</span></td><td><span class="wz-badge wz-badge--excluded">مستبعد</span></td><td class="wz-num">300</td><td class="wz-num">18.00</td><td class="wz-num">18.60</td><td class="wz-num wz-up">▲ +3.33%</td></tr>
+    </tbody>
+  </table>
+</div>
+</section><section class="comp"><h3>Stat</h3><div class="wz" dir="rtl" lang="ar" style="background:var(--surface-0);padding:var(--space-6);display:flex;gap:var(--space-4);flex-wrap:wrap">
+  <div class="wz-stat">
+    <span class="wz-stat__label">قيمة المحفظة (ج.م)</span>
+    <span class="wz-stat__value">1,284,560</span>
+    <span class="wz-stat__delta wz-stat__delta--up">▲ <span class="wz-num">+2.31%</span> منذ بداية الشهر</span>
+  </div>
+  <div class="wz-stat">
+    <span class="wz-stat__label">أقصى تراجع</span>
+    <span class="wz-stat__value">−7.4%</span>
+    <span class="wz-stat__delta wz-stat__delta--down">▼ حد التنبيه <span class="wz-num">−15%</span></span>
+  </div>
+  <div class="wz-stat">
+    <span class="wz-stat__label">مستحق التطهير</span>
+    <span class="wz-stat__value">412.75</span>
+    <span class="wz-stat__note">من توزيعات ٢٠٢٦</span>
+  </div>
+</div>
+</section><section class="comp"><h3>WeightBar</h3><div class="wz" dir="rtl" lang="ar" style="background:var(--surface-0);padding:var(--space-6)">
+  <div style="font:600 15px/24px var(--font-sans);margin-bottom:var(--space-3)">أوزان المحفظة · الهدف <span style="color:var(--brass-text)">|</span></div>
+  <div class="wz-weights" dir="ltr">
+    <div class="wz-weight"><span class="wz-weight__sym">ACME</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:84%"></span><span class="wz-weight__target" style="left:86%"></span></span><span class="wz-weight__val">12.6%</span></div>
+    <div class="wz-weight"><span class="wz-weight__sym">DEMO</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:62%"></span><span class="wz-weight__target" style="left:66%"></span></span><span class="wz-weight__val">9.3%</span></div>
+    <div class="wz-weight wz-weight--over"><span class="wz-weight__sym">XMPL</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:100%"></span><span class="wz-weight__target" style="left:80%"></span></span><span class="wz-weight__val">15.0%</span></div>
+    <div class="wz-weight"><span class="wz-weight__sym">SAMP</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:40%"></span><span class="wz-weight__target" style="left:40%"></span></span><span class="wz-weight__val">6.0%</span></div>
+    <div class="wz-weight"><span class="wz-weight__sym">CASH</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:33%;background:var(--line-strong)"></span></span><span class="wz-weight__val">5.0%</span></div>
+  </div>
+</div>
 </section>
-
-<section>
-  <div class="sect-head">
-    <span class="sect-no">01 — Logos</span>
-    <h2 class="sect-title">Mark &amp; lockups</h2>
-    <p class="sect-lead">Sixteen outlined SVGs. No font dependency, no decoration. Weights in <code style="font:400 12px var(--font-mono)">--ink</code>, beam and fulcrum in <code style="font:400 12px var(--font-mono)">--brass</code>.</p>
-  </div>
-  <div class="grid-logos">
-    <figure><img src="logos/svg/wazn-mark.svg" alt="mark"><figcaption>wazn-mark</figcaption></figure>
-    <figure class="dark"><img src="logos/svg/wazn-mark-reverse.svg" alt="mark-reverse"><figcaption>wazn-mark-reverse</figcaption></figure>
-    <figure><img src="logos/svg/wazn-mark-mono-ink.svg" alt="mono-ink"><figcaption>wazn-mark-mono-ink</figcaption></figure>
-    <figure class="dark"><img src="logos/svg/wazn-mark-mono-ivory.svg" alt="mono-ivory"><figcaption>wazn-mark-mono-ivory</figcaption></figure>
-    <figure><img src="logos/svg/wazn-logo-en.svg" alt="logo-en"><figcaption>wazn-logo-en</figcaption></figure>
-    <figure class="dark"><img src="logos/svg/wazn-logo-en-reverse.svg" alt="logo-en-reverse"><figcaption>wazn-logo-en-reverse</figcaption></figure>
-    <figure><img src="logos/svg/wazn-logo-ar.svg" alt="logo-ar"><figcaption>wazn-logo-ar</figcaption></figure>
-    <figure class="dark"><img src="logos/svg/wazn-logo-ar-reverse.svg" alt="logo-ar-reverse"><figcaption>wazn-logo-ar-reverse</figcaption></figure>
-    <figure><img src="logos/svg/wazn-logo-stacked.svg" alt="logo-stacked"><figcaption>wazn-logo-stacked</figcaption></figure>
-    <figure class="dark"><img src="logos/svg/wazn-logo-stacked-reverse.svg" alt="logo-stacked-reverse"><figcaption>wazn-logo-stacked-reverse</figcaption></figure>
-    <figure><img src="logos/svg/wazn-agent.svg" alt="agent"><figcaption>wazn-agent</figcaption></figure>
-    <figure><img src="logos/svg/wazn-engine.svg" alt="engine"><figcaption>wazn-engine</figcaption></figure>
-    <figure><img src="logos/svg/wazn-purify.svg" alt="purify"><figcaption>wazn-purify</figcaption></figure>
-    <figure><img src="logos/svg/wazn-screen.svg" alt="screen"><figcaption>wazn-screen</figcaption></figure>
-    <figure><img src="logos/svg/wazn-app-icon.svg" alt="app-icon"><figcaption>wazn-app-icon</figcaption></figure>
-    <figure><img src="logos/svg/wazn-favicon.svg" alt="favicon"><figcaption>wazn-favicon</figcaption></figure>
-  </div>
-</section>
-
-<section>
-  <div class="sect-head">
-    <span class="sect-no">02 — Colour</span>
-    <h2 class="sect-title">Paper &amp; Graphite</h2>
-    <p class="sect-lead">Two themes. Monochrome ground, one restrained brass accent, three status colours that only earn their place with a shape or a word.</p>
-  </div>
-  <div class="swatches" id="swatches"></div>
-</section>
-
-<section>
-  <div class="sect-head">
-    <span class="sect-no">03 — Type</span>
-    <h2 class="sect-title">Readex &amp; Plex</h2>
-    <p class="sect-lead">Readex Pro for display (geometric Arabic + Latin from one design). IBM Plex Sans Arabic for reading. IBM Plex Mono for every number.</p>
-  </div>
-  <div class="ty"><div class="ty__meta">display-xl<br>72 / 76 · 500 · −0.03em</div><div class="ty__sample" style="font-family:var(--font-display);font-size:72px;line-height:76px;font-weight:500;letter-spacing:-0.03em">استثمار حلال… بوزن دقيق</div></div>
-  <div class="ty"><div class="ty__meta">display-l<br>44 / 52 · 500 · −0.02em</div><div class="ty__sample" style="font-family:var(--font-display);font-size:44px;line-height:52px;font-weight:500;letter-spacing:-0.02em">Portfolio weights</div></div>
-  <div class="ty"><div class="ty__meta">title<br>26 / 34 · 500 · −0.01em</div><div class="ty__sample" style="font-family:var(--font-display);font-size:26px;line-height:34px;font-weight:500;letter-spacing:-0.01em">المحفظة هذا الشهر</div></div>
-  <div class="ty"><div class="ty__meta">heading<br>18 / 28 · 500</div><div class="ty__sample" style="font-family:var(--font-sans);font-size:18px;line-height:28px;font-weight:500">قواعد المخاطر</div></div>
-  <div class="ty"><div class="ty__meta">body<br>15 / 26 · 400</div><div class="ty__sample" style="font-family:var(--font-sans);font-size:15px;line-height:26px;font-weight:400">الـ AI بيقترح، والقواعد بتقرر، وأنت بتوافق.</div></div>
-  <div class="ty"><div class="ty__meta">body-sm<br>13 / 22 · 400</div><div class="ty__sample" style="font-family:var(--font-sans);font-size:13px;line-height:22px;font-weight:400">آخر تحديث: ٣ نوفمبر ٢٠٢٦</div></div>
-  <div class="ty"><div class="ty__meta">label<br>11 / 18 · 500 · 0.06em · UP</div><div class="ty__sample" style="font-family:var(--font-sans);font-size:11px;line-height:18px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase">Target weight · الوزن المستهدف</div></div>
-  <div class="ty"><div class="ty__meta">figure-l<br>36 / 44 · 400 · tnum</div><div class="ty__sample" style="font-family:var(--font-mono);font-size:36px;line-height:44px;font-weight:400;letter-spacing:-0.02em">+12.48%</div></div>
-  <div class="ty"><div class="ty__meta">figure<br>14 / 22 · 500 · tnum</div><div class="ty__sample" style="font-family:var(--font-mono);font-size:14px;line-height:22px;font-weight:500">1,284.50</div></div>
-  <div class="ty"><div class="ty__meta">code<br>12 / 20 · 400</div><div class="ty__sample" style="font-family:var(--font-mono);font-size:12px;line-height:20px;font-weight:400">COMI · ord_5001</div></div>
-</section>
-
-<section>
-  <div class="sect-head">
-    <span class="sect-no">04 — Components</span>
-    <h2 class="sect-title">UI kit</h2>
-    <p class="sect-lead">Hairline borders, no gratuitous fills, one accent. Every value is a token.</p>
-  </div>
-
-  <div class="comp"><h3>Button</h3>
-    <div class="stage wz" dir="rtl" lang="ar" style="display:grid;gap:var(--space-6)">
-      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center">
-        <button class="wz-btn wz-btn--primary">اعتماد إعادة التوازن</button>
-        <button class="wz-btn wz-btn--accent">تشغيل الـ Backtest</button>
-        <button class="wz-btn wz-btn--secondary">مراجعة الأوامر</button>
-        <button class="wz-btn wz-btn--danger">إيقاف التداول</button>
-      </div>
-      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center">
-        <button class="wz-btn wz-btn--primary wz-btn--sm">موافقة</button>
-        <button class="wz-btn wz-btn--secondary wz-btn--sm">رفض</button>
-        <button class="wz-btn wz-btn--primary" disabled>بانتظار البيانات</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="comp"><h3>Compliance badge</h3>
-    <div class="stage wz" dir="rtl" lang="ar" style="display:grid;gap:var(--space-4)">
-      <div style="display:flex;gap:var(--space-6);flex-wrap:wrap">
-        <span class="wz-badge wz-badge--compliant">متوافق</span>
-        <span class="wz-badge wz-badge--watch">تحت المراقبة</span>
-        <span class="wz-badge wz-badge--excluded">مستبعد</span>
-      </div>
-      <div style="display:flex;gap:var(--space-6);flex-wrap:wrap" dir="ltr" lang="en">
-        <span class="wz-badge wz-badge--compliant">Compliant</span>
-        <span class="wz-badge wz-badge--watch">Watchlist</span>
-        <span class="wz-badge wz-badge--excluded">Excluded</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="comp"><h3>Stat</h3>
-    <div class="stage wz" dir="rtl" lang="ar" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-8)">
-      <div class="wz-stat">
-        <span class="wz-stat__label">قيمة المحفظة</span>
-        <span class="wz-stat__value">1,284,560</span>
-        <span class="wz-stat__delta wz-stat__delta--up">▲ <span class="wz-num">+2.31%</span> منذ بداية الشهر</span>
-      </div>
-      <div class="wz-stat">
-        <span class="wz-stat__label">أقصى تراجع</span>
-        <span class="wz-stat__value">−7.4%</span>
-        <span class="wz-stat__delta wz-stat__delta--down">▼ حد التنبيه <span class="wz-num">−15%</span></span>
-      </div>
-      <div class="wz-stat">
-        <span class="wz-stat__label">مستحق التطهير</span>
-        <span class="wz-stat__value">412.75</span>
-        <span class="wz-stat__note">من توزيعات ٢٠٢٦</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="comp"><h3>Weight bar</h3>
-    <div class="stage wz" dir="rtl" lang="ar">
-      <div style="font:500 11px/18px var(--font-sans);letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-6)">أوزان المحفظة · الهدف <span style="color:var(--brass-text)">|</span></div>
-      <div class="wz-weights" dir="ltr">
-        <div class="wz-weight"><span class="wz-weight__sym">ACME</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:84%"></span><span class="wz-weight__target" style="left:86%"></span></span><span class="wz-weight__val">12.6%</span></div>
-        <div class="wz-weight"><span class="wz-weight__sym">DEMO</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:62%"></span><span class="wz-weight__target" style="left:66%"></span></span><span class="wz-weight__val">9.3%</span></div>
-        <div class="wz-weight wz-weight--over"><span class="wz-weight__sym">XMPL</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:100%"></span><span class="wz-weight__target" style="left:80%"></span></span><span class="wz-weight__val">15.0%</span></div>
-        <div class="wz-weight"><span class="wz-weight__sym">SAMP</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:40%"></span><span class="wz-weight__target" style="left:40%"></span></span><span class="wz-weight__val">6.0%</span></div>
-        <div class="wz-weight"><span class="wz-weight__sym">CASH</span><span class="wz-weight__track"><span class="wz-weight__fill" style="width:33%;background:var(--line-strong)"></span></span><span class="wz-weight__val">5.0%</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="comp"><h3>Holdings table</h3>
-    <div class="stage wz" dir="rtl" lang="ar">
-      <table class="wz-table">
-        <thead><tr><th>السهم</th><th>الحالة</th><th class="wz-num">الكمية</th><th class="wz-num">متوسط التكلفة</th><th class="wz-num">السعر</th><th class="wz-num">الربح/الخسارة</th></tr></thead>
-        <tbody>
-          <tr><td><span class="wz-num" style="font-size:13px">ACME</span></td><td><span class="wz-badge wz-badge--compliant">متوافق</span></td><td class="wz-num">1,200</td><td class="wz-num">96.40</td><td class="wz-num">104.25</td><td class="wz-num wz-up">▲ +8.14%</td></tr>
-          <tr><td><span class="wz-num" style="font-size:13px">DEMO</span></td><td><span class="wz-badge wz-badge--watch">تحت المراقبة</span></td><td class="wz-num">850</td><td class="wz-num">52.10</td><td class="wz-num">49.80</td><td class="wz-num wz-down">▼ −4.41%</td></tr>
-          <tr><td><span class="wz-num" style="font-size:13px">TEST</span></td><td><span class="wz-badge wz-badge--excluded">مستبعد</span></td><td class="wz-num">300</td><td class="wz-num">18.00</td><td class="wz-num">18.60</td><td class="wz-num wz-up">▲ +3.33%</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <span>Rules &amp; rationale: <a href="BRAND_BOOK.md">BRAND_BOOK.md</a></span>
-  <span>Tokens: <a href="design-system/tokens.json">tokens.json</a></span>
-</footer>
-
-</main>
-<script>
-const SW = [
-  ["surface-0","#FFFFFF","#0C0C0C","Page background. Default ground for text and charts."],
-  ["surface-1","#FFFFFF","#161616","Cards, tables, panels, inputs — one step above surface-0."],
-  ["surface-2","#F6F6F6","#1E1E1E","Sunken areas: table header rows, zebra rows, code blocks."],
-  ["ink","#111111","#F2F2F2","Primary text and the mark's weights."],
-  ["ink-muted","#555555","#A6A6A6","Secondary text: labels, captions, axis ticks."],
-  ["brand-ink","#111111","#1A1A1A","Brand blocks and primary buttons."],
-  ["brand-navy","#2A2A2A","#2A2A2A","Hover of primary; chart series 2."],
-  ["brass","#B88A3E","#C9A368","The one accent. Beam, fulcrum, outlined accent buttons, active bars."],
-  ["brass-text","#6E4F1E","#D9B98A","Brass when it must be read: links, focus rings."],
-  ["brass-tint","#F5ECD8","#2A2318","Quiet brass ground: selected rows, callouts."],
-  ["line","#E8E8E8","#262626","Hairlines: dividers, table rules, card borders."],
-  ["line-strong","#B5B5B5","#4A4A4A","Control borders. Meets 3:1 non-text."],
-  ["positive","#216E3F","#78C8A0","Gains, compliant, filled orders. Always with ▲ or a word."],
-  ["negative","#94382A","#D97B65","Losses, excluded, rejected orders. Always with ▼ or a word."],
-  ["warning","#8A6B2E","#D4A860","Watchlist, stale data, pending reconciliation."],
-];
-const theme = () => document.documentElement.dataset.theme;
-const render = () => {
-  const dark = theme() === "dark";
-  document.getElementById("swatches").innerHTML = SW.map(([n,l,d,u]) => `
-    <div class="sw">
-      <div class="sw__chip" style="background:${dark?d:l}"></div>
-      <div class="sw__head"><span class="sw__name">${n}</span><span class="sw__hex">${dark?d:l}</span></div>
-      <p class="sw__use">${u}</p>
-    </div>`).join("");
-};
-render();
-new MutationObserver(render).observe(document.documentElement, {attributes:true, attributeFilter:["data-theme"]});
-</script>
-</body></html>
+<p style="color:var(--ink-muted);font-size:13px">Rules and rationale: BRAND_BOOK.md · Tokens: design-system/tokens.json</p>
+</main></body></html>

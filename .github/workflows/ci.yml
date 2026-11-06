@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tools-compile:
+    name: tools/ syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: py_compile tools/
+        run: python -m compileall -q tools/
+
+  tokens:
+    name: Validate tokens.json
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse tokens.json
+        run: python -c "import json, pathlib; json.loads(pathlib.Path('design-system/tokens.json').read_text())"
+
+  # TODO (TODO.md item 0.12): add tools/pyproject.toml with pinned deps + ruff config,
+  # then replace the compile check with `ruff check tools/`.
+  # TODO (TODO.md item 1.23): regenerate assets (gen_assets.py) and git diff --exit-code logos/svg/.
+  # TODO (TODO.md item 1.23): regenerate gallery (build_gallery.py) and diff.

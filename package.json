@@ -1,0 +1,29 @@
+{
+  "name": "@wazn/brand",
+  "version": "0.1.0",
+  "description": "Wazn brand identity and design system: tokens, components, logos, fonts.",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wazn-Trade/wazn-brand.git"
+  },
+  "files": [
+    "design-system/",
+    "logos/svg/",
+    "fonts/",
+    "BRAND_BOOK.md",
+    "README.md"
+  ],
+  "exports": {
+    "./tokens.css": "./design-system/tokens.css",
+    "./tokens.json": "./design-system/tokens.json",
+    "./components.css": "./design-system/components/bundle.css",
+    "./logos/*.svg": "./logos/svg/*.svg",
+    "./fonts/*": "./fonts/*",
+    "./brand-book": "./BRAND_BOOK.md",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
+}

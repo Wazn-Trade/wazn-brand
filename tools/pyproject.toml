@@ -1,0 +1,24 @@
+[project]
+name = "wazn-brand-tools"
+version = "0.1.0"
+description = "Asset + gallery + token-CSS generators for the Wazn brand repo (internal only)."
+requires-python = ">=3.11"
+# Pinned to the last versions these tools were verified against. Bump deliberately.
+dependencies = [
+    "fonttools>=4.55,<5",
+    "uharfbuzz>=0.42,<1",
+    "brotli>=1.1,<2",     # woff2 compression used by fonttools
+    "pillow>=11.0,<12",   # favicon.ico generation (gen_tokens_css doesn't need it)
+]
+
+[tool.ruff]
+# The brand tools are generator scripts and are deliberately compact; the
+# line-length cap and multiple-statement rules from the main configs would
+# fight that style. Only the essentials run here.
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["F", "E", "W"]
+# These are hand-written, one-off scripts. Compact style is intentional.
+ignore = ["E501", "E701", "E702", "E401"]

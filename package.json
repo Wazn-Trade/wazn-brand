@@ -25,5 +25,9 @@
   },
   "sideEffects": [
     "*.css"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  }
 }

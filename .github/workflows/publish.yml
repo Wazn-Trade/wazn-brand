@@ -1,0 +1,63 @@
+name: Publish @wazn/brand
+
+# Publish to GitHub Packages on a signed version tag (v0.1.0, v0.2.3, …).
+# The committed package.json keeps "private": true so nobody can accidentally
+# `npm publish` from a workstation. This workflow flips it in CI only, after
+# asserting the tag matches package.json's version.
+
+on:
+  push:
+    tags: ["v[0-9]+.[0-9]+.[0-9]+"]
+
+concurrency:
+  group: publish-brand-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@wazn"
+
+      - name: Assert tag matches package.json version
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          pkg=$(node -p "require('./package.json').version")
+          if [[ "$tag" != "$pkg" ]]; then
+            echo "::error title=version mismatch::tag v$tag does not match package.json version $pkg"
+            exit 1
+          fi
+          echo "tag = package.json version = $tag"
+
+      - name: Flip private=false for publish
+        # Committed state keeps private=true. CI-only flip is safe: npm publish
+        # reads the mutated file; we never write it back to the repo.
+        run: npm pkg delete private
+
+      - name: Publish to GitHub Packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm publish
+
+      - name: Attach package.json to release notes
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Create a release note pointing at the Packages UI if one doesn't exist.
+          if ! gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release create "$GITHUB_REF_NAME" \
+              --title "@wazn/brand $GITHUB_REF_NAME" \
+              --notes "Published to GitHub Packages. See the workflow run for details." \
+              --generate-notes
+          fi

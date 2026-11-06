@@ -10,8 +10,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  tools-compile:
-    name: tools/ syntax check
+  tools:
+    name: tools/ ruff + import check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,19 +20,61 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install ruff
+        run: pip install "ruff>=0.6"
+
+      - name: Ruff (tools/ scoped config)
+        run: ruff check --config tools/pyproject.toml tools/
+
       - name: py_compile tools/
         run: python -m compileall -q tools/
 
   tokens:
-    name: Validate tokens.json
+    name: tokens.json ↔ tokens.css
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
       - name: Parse tokens.json
         run: python -c "import json, pathlib; json.loads(pathlib.Path('design-system/tokens.json').read_text())"
 
-  # TODO (TODO.md item 0.12): add tools/pyproject.toml with pinned deps + ruff config,
-  # then replace the compile check with `ruff check tools/`.
-  # TODO (TODO.md item 1.23): regenerate assets (gen_assets.py) and git diff --exit-code logos/svg/.
-  # TODO (TODO.md item 1.23): regenerate gallery (build_gallery.py) and diff.
+      - name: Generator does not crash
+        run: python tools/gen_tokens_css.py > /dev/null
+
+      # The live tokens.css is intentionally hand-tuned relative to tokens.json
+      # (see TODO.md 0.11). Warn on drift rather than fail, until the reconciliation
+      # decision lands. Flip to --check (no warning wrapper) to make it a hard gate.
+      - name: Drift warning
+        run: |
+          if ! python tools/gen_tokens_css.py --check; then
+            echo "::warning title=tokens drift::tokens.css diverges from tokens.json — see TODO.md 0.11"
+          fi
+
+  assets:
+    name: Regenerate assets + diff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install tools deps
+        run: pip install "fonttools>=4.55,<5" "uharfbuzz>=0.42,<1" "brotli>=1.1,<2" "pillow>=11.0,<12"
+
+      - name: Regenerate SVG logo assets
+        run: python tools/gen_assets.py
+
+      - name: No drift in logos/svg/
+        run: git diff --exit-code logos/svg/
+
+      - name: Rebuild offline gallery
+        run: python tools/build_gallery.py
+
+      - name: No drift in index.html (gallery)
+        run: git diff --exit-code index.html

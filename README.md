@@ -26,3 +26,75 @@
 ```
 
 النسخة الحية من الـ design system موجودة على Claude باسم «Wazn». الفولدر ده نسخة كاملة منها.
+
+## Installing as `@wazn/brand` from GitHub Packages
+
+`@wazn/brand` is published to GitHub Packages (not npmjs) under the
+`Wazn-Trade` org. Access needs a PAT or `GITHUB_TOKEN` with `read:packages`.
+
+### 1. Authenticate npm against the GH Packages registry
+
+Create `~/.npmrc` (or set it in CI):
+
+```ini
+@wazn:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
+
+In GitHub Actions:
+
+```yaml
+- uses: actions/setup-node@v4
+  with:
+    node-version: "20"
+    registry-url: "https://npm.pkg.github.com"
+    scope: "@wazn"
+- run: npm ci
+  env: { NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
+```
+
+### 2. Install
+
+```bash
+npm install @wazn/brand
+```
+
+### 3. Consume
+
+Pick the imports your tooling supports. The package exposes everything through
+the `exports` map in `package.json`:
+
+```html
+<!-- Static HTML (wazn-site, wazn-docs deck): copy at build time. -->
+<link rel="stylesheet" href="/node_modules/@wazn/brand/design-system/tokens.css">
+<link rel="stylesheet" href="/node_modules/@wazn/brand/design-system/components/bundle.css">
+```
+
+```js
+// Bundlers (Vite, esbuild): subpath imports.
+import "@wazn/brand/tokens.css";
+import "@wazn/brand/components.css";
+import tokens from "@wazn/brand/tokens.json";
+```
+
+```js
+// SVG logos and raw fonts.
+import logoAr from "@wazn/brand/logos/wazn-logo-ar.svg";
+```
+
+### 4. Keep the version pinned
+
+Commit `package-lock.json`. Bumping `@wazn/brand` is a deliberate design-system
+promotion — treat it like any other breaking library change.
+
+### 5. Publishing (maintainers only)
+
+```bash
+# After updating "version" in package.json and committing:
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+The `Publish @wazn/brand` workflow runs on `v*` tags and pushes to GitHub
+Packages. The committed `package.json` keeps `"private": true`; the workflow
+flips it in CI only, after asserting the tag matches the version.

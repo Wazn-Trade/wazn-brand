@@ -27,17 +27,18 @@
 
 النسخة الحية من الـ design system موجودة على Claude باسم «Wazn». الفولدر ده نسخة كاملة منها.
 
-## Installing as `@wazn/brand` from GitHub Packages
+## Installing as `@wazn-trade/brand` from GitHub Packages
 
-`@wazn/brand` is published to GitHub Packages (not npmjs) under the
+`@wazn-trade/brand` is published to GitHub Packages (not npmjs) under the
 `Wazn-Trade` org. Access needs a PAT or `GITHUB_TOKEN` with `read:packages`.
+The npm scope `@wazn-trade` matches the GitHub org (lower-cased).
 
 ### 1. Authenticate npm against the GH Packages registry
 
 Create `~/.npmrc` (or set it in CI):
 
 ```ini
-@wazn:registry=https://npm.pkg.github.com
+@wazn-trade:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
@@ -48,7 +49,7 @@ In GitHub Actions:
   with:
     node-version: "20"
     registry-url: "https://npm.pkg.github.com"
-    scope: "@wazn"
+    scope: "@wazn-trade"
 - run: npm ci
   env: { NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
 ```
@@ -56,7 +57,7 @@ In GitHub Actions:
 ### 2. Install
 
 ```bash
-npm install @wazn/brand
+npm install @wazn-trade/brand
 ```
 
 ### 3. Consume
@@ -66,25 +67,25 @@ the `exports` map in `package.json`:
 
 ```html
 <!-- Static HTML (wazn-site, wazn-docs deck): copy at build time. -->
-<link rel="stylesheet" href="/node_modules/@wazn/brand/design-system/tokens.css">
-<link rel="stylesheet" href="/node_modules/@wazn/brand/design-system/components/bundle.css">
+<link rel="stylesheet" href="/node_modules/@wazn-trade/brand/design-system/tokens.css">
+<link rel="stylesheet" href="/node_modules/@wazn-trade/brand/design-system/components/bundle.css">
 ```
 
 ```js
 // Bundlers (Vite, esbuild): subpath imports.
-import "@wazn/brand/tokens.css";
-import "@wazn/brand/components.css";
-import tokens from "@wazn/brand/tokens.json";
+import "@wazn-trade/brand/tokens.css";
+import "@wazn-trade/brand/components.css";
+import tokens from "@wazn-trade/brand/tokens.json";
 ```
 
 ```js
 // SVG logos and raw fonts.
-import logoAr from "@wazn/brand/logos/wazn-logo-ar.svg";
+import logoAr from "@wazn-trade/brand/logos/wazn-logo-ar.svg";
 ```
 
 ### 4. Keep the version pinned
 
-Commit `package-lock.json`. Bumping `@wazn/brand` is a deliberate design-system
+Commit `package-lock.json`. Bumping `@wazn-trade/brand` is a deliberate design-system
 promotion — treat it like any other breaking library change.
 
 ### 5. Publishing (maintainers only)
@@ -95,6 +96,6 @@ git tag v0.1.0
 git push origin v0.1.0
 ```
 
-The `Publish @wazn/brand` workflow runs on `v*` tags and pushes to GitHub
+The `Publish @wazn-trade/brand` workflow runs on `v*` tags and pushes to GitHub
 Packages. The committed `package.json` keeps `"private": true`; the workflow
 flips it in CI only, after asserting the tag matches the version.

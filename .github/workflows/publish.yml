@@ -1,9 +1,12 @@
-name: Publish @wazn/brand
+name: Publish @wazn-trade/brand
 
 # Publish to GitHub Packages on a signed version tag (v0.1.0, v0.2.3, …).
 # The committed package.json keeps "private": true so nobody can accidentally
 # `npm publish` from a workstation. This workflow flips it in CI only, after
 # asserting the tag matches package.json's version.
+#
+# Note: npm scope must match the GitHub org name. Our org is `Wazn-Trade`,
+# which lower-cases to `@wazn-trade` in npm.
 
 on:
   push:
@@ -27,7 +30,7 @@ jobs:
         with:
           node-version: "20"
           registry-url: "https://npm.pkg.github.com"
-          scope: "@wazn"
+          scope: "@wazn-trade"
 
       - name: Assert tag matches package.json version
         run: |
@@ -57,7 +60,7 @@ jobs:
           # Create a release note pointing at the Packages UI if one doesn't exist.
           if ! gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
             gh release create "$GITHUB_REF_NAME" \
-              --title "@wazn/brand $GITHUB_REF_NAME" \
+              --title "@wazn-trade/brand $GITHUB_REF_NAME" \
               --notes "Published to GitHub Packages. See the workflow run for details." \
               --generate-notes
           fi

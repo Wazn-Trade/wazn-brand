@@ -45,14 +45,11 @@ jobs:
       - name: Generator does not crash
         run: python tools/gen_tokens_css.py > /dev/null
 
-      # The live tokens.css is intentionally hand-tuned relative to tokens.json
-      # (see TODO.md 0.11). Warn on drift rather than fail, until the reconciliation
-      # decision lands. Flip to --check (no warning wrapper) to make it a hard gate.
-      - name: Drift warning
-        run: |
-          if ! python tools/gen_tokens_css.py --check; then
-            echo "::warning title=tokens drift::tokens.css diverges from tokens.json — see TODO.md 0.11"
-          fi
+      # Hard gate: tokens.json is the spec, tokens.css is the derivative.
+      # TODO.md 0.11 reconciliation landed by promoting the hand-tuned dark values
+      # into tokens.json, so any future drift is a real divergence that must be fixed.
+      - name: Drift check
+        run: python tools/gen_tokens_css.py --check
 
   assets:
     name: Regenerate assets + diff
